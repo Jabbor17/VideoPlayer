@@ -33,6 +33,7 @@ android {
 
 dependencies {
 
+    implementation 'com.github.khizar1556.MKVideoPlayer:mkvideoplayer:0.1.5'
     implementation 'net.alhazmy13.MediaPicker:libary:2.4.4'
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.0'

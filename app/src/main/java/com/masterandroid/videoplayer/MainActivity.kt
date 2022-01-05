@@ -2,9 +2,11 @@ package com.masterandroid.videoplayer
 
 import android.R.attr
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.khizar1556.mkvideoplayer.MKPlayerActivity
 import net.alhazmy13.mediapicker.Image.ImagePicker
 import net.alhazmy13.mediapicker.Video.VideoPicker
 
@@ -39,6 +41,8 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == VideoPicker.VIDEO_PICKER_REQUEST_CODE && resultCode == RESULT_OK){
             val videoPaths = data!!.getStringArrayListExtra(VideoPicker.EXTRA_VIDEO_PATH)
+            val uri = Uri.parse(videoPaths!![0])
+            MKPlayerActivity.configPlayer(this).play(uri.toString())
 
         }
     }
